@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Nest Dashboard</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/theme/favicon.svg" />
+    <!-- Template CSS -->
+    <script src="assets/js/vendors/color-modes.js"></script>
+    <link rel="stylesheet" href="assets/css/scrollbar.css">
+    <link href="assets/css/main.css?v=6.0" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="assets/css/create-prescription.css">
+</head>
+
+<body>
+    <div class="screen-overlay"></div>
+    <aside class="navbar-aside" id="offcanvas_aside">
+        <div class="aside-top">
+            <a href="index.html" class="brand-wrap">
+                <img src="assets/imgs/theme/logo.svg" class="logo" alt="Nest Dashboard" />
+            </a>
+            <div>
+                <button class="btn btn-icon btn-aside-minimize"><i
+                        class="text-muted material-icons md-menu_open"></i></button>
+            </div>
+        </div>
+        <nav>
+            <ul class="menu-aside">
+                <li class="menu-item">
+                    <a class="menu-link" href="index.html">
+                        <i class="icon material-icons md-home"></i>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="menu-item has-submenu active">
+                    <a class="menu-link">
+                        <i class="icon material-icons md-description"></i>
+                        <span class="text">Prescriptions</span>
+                    </a>
+                    <div class="submenu">
+                        <a class="active" href="patients.html">Create Prescription</a>
+                    </div>
+                </li>
+
+            </ul>
+
+            <br />
+            <br />
+        </nav>
+    </aside>
+    <main class="main-wrap">
+        <header class="main-header navbar">
+            <div class="col-search">
+                <!-- <form class="searchform">
+                        <div class="input-group">
+                            <input list="search_terms" type="text" class="form-control" placeholder="Search term" />
+                            <button class="btn btn-light bg" type="button"><i class="material-icons md-search"></i></button>
+                        </div>
+                        <datalist id="search_terms">
+                            <option value="Products"></option>
+                            <option value="New orders"></option>
+                            <option value="Apple iphone"></option>
+                            <option value="Ahmed Hassan"></option>
+                        </datalist>
+                    </form> -->
+            </div>
+            <div class="col-nav">
+                <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"><i
+                        class="material-icons md-apps"></i></button>
+                <ul class="nav">
+                    <li class="nav-item toggle_active position-relative">
+                        <input class="input" type="checkbox" name="darkmode" id="dark-mode" />
+                        <label for="dark-mode" class="label">
+                            <span class="circle"></span>
+                        </label>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-icon" href="#">
+                            <i class="material-icons md-notifications animation-shake"></i>
+                            <span class="badge rounded-pill">3</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="requestfullscreen nav-link btn-icon"><i
+                                class="material-icons md-cast"></i></a>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownLanguage"
+                            aria-expanded="false"><i class="material-icons md-public"></i></a>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownLanguage">
+                            <a class="dropdown-item text-brand" href="#"><img src="assets/imgs/theme/flag-us.png"
+                                    alt="English" />English</a>
+                            <a class="dropdown-item" href="#"><img src="assets/imgs/theme/flag-fr.png"
+                                    alt="Français" />Français</a>
+                            <a class="dropdown-item" href="#"><img src="assets/imgs/theme/flag-jp.png"
+                                    alt="Français" />日本語</a>
+                            <a class="dropdown-item" href="#"><img src="assets/imgs/theme/flag-cn.png"
+                                    alt="Français" />中国人</a>
+                        </div>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownAccount"
+                            aria-expanded="false"> <img class="img-xs rounded-circle"
+                                src="assets/imgs/people/avatar-2.png" alt="User" /></a>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownAccount">
+                            <a class="dropdown-item" href="#"><i class="material-icons md-perm_identity"></i>Edit
+                                Profile</a>
+                            <a class="dropdown-item" href="#"><i class="material-icons md-settings"></i>Account
+                                Settings</a>
+                            <a class="dropdown-item" href="#"><i
+                                    class="material-icons md-account_balance_wallet"></i>Wallet</a>
+                            <a class="dropdown-item" href="#"><i class="material-icons md-receipt"></i>Billing</a>
+                            <a class="dropdown-item" href="#"><i class="material-icons md-help_outline"></i>Help
+                                center</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="#"><i
+                                    class="material-icons md-exit_to_app"></i>Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section class="content-main">
+            <div class="content-header">
+                <div>
+                    <h2 class="content-title card-title">Create Prescription</h2>
+                </div>
+                <div>
+                    <input type="text" placeholder="Search Categories" class="form-control bg-white" />
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <!-- complain -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5 class="mb-3">Prescription Form</h5>
+                            <form id="add_medicine_form">
+                                <div class="mb-4">
+                                    <label for="complain" class="form-label">Complain</label>
+                                    <input type="text" placeholder="Complain" class="form-control" id="complain" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- add medicine -->
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5 class="mb-3">Add Medicine</h5>
+                            <form id="add_medicine_form">
+                                <div class="mb-4 position-relative medicine_name_wrapper">
+                                    <label for="medicine_name" class="form-label">Medicine Name</label>
+                                    <input type="text" placeholder="Medicine Name" class="form-control"
+                                        id="medicine_name" />
+
+                                    <div class="seach_result">
+                                        <ul>
+                                            <li>Tablet Napa 20mg</li>
+                                            <li>Tablet Napa 20mg</li>
+                                            <li>Tablet Napa 20mg</li>
+                                            <li>Tablet Napa 20mg</li>
+                                            <li>Tablet Napa 20mg</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label">Dosages</label>
+                                    <select id="medicine_dosage" class="form-select">
+                                        <option>1+0+0</option>
+                                        <option>1+1+1</option>
+                                    </select>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label">Meal Instruction</label>
+                                    <select id="medicine_meal_instruction" class="form-select">
+                                        <option>Before Meal</option>
+                                        <option>After Meal</option>
+                                    </select>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="medicine_duration" class="form-label">Duration</label>
+                                    <input type="number" placeholder="Medicine Duration" class="form-control"
+                                        id="medicine_duration" />
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label">Conditional Instruction</label>
+                                    <!-- <select id="medicine_conditional_instruction" class="form-select">
+                                        <option>Take If Fever</option>
+                                        <option>Take If you face allergy problem</option>
+                                    </select> -->
+                                    <textarea id="medicine_conditional_instruction" style="min-height: 50px;"
+                                        placeholder="Type here" class="form-control"></textarea>
+                                </div>
+                                <div class="d-grid">
+                                    <button id="add_medicine_form_submit_btn" class="btn btn-primary">Add
+                                        Medicine</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!--
+                        <div class="col-md-3">
+
+
+                            <h5 class="mb-3">Conditional Instruction</h5>
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <label class="mb-2 form-check form-check-inline">
+                                        <input class="form-check-input" checked="" name="conditional_instructions" type="radio">
+                                        <span class="form-check-label"> Clothes </span>
+                                    </label>
+                                    <label class="mb-2 form-check form-check-inline">
+                                        <input class="form-check-input" name="conditional_instructions" type="radio">
+                                        <span class="form-check-label"> Electronics </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    -->
+                        <div class="col-md-9">
+                            <h5 class="mb-3">Added Medicine List</h5>
+                            <div id="medicine_lists" class="table-responsive border rounded pl-10 pr-10 overflow-auto scrollbar-primary"
+                                style="height: 300px;">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Medicine Name</th>
+                                            <th>Dosages</th>
+                                            <th>Meal Instruction</th>
+                                            <th>Days</th>
+                                            <th class="text-end pr-30">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="added_medicines">
+                                        <!-- <tr>
+                                                <td>Tablet Napa 20mg</td>
+                                                <td>1+0+1</td>
+                                                <td>After Meal</td>
+                                                <td>30</td>
+                                                <td class="text-end">
+                                                    <button class="btn btn-md rounded font-sm">Remove</button>
+                                                </td>
+                                            </tr> -->
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+
+                            <!-- advice -->
+                            <div class="row mt-4">
+                                <div class="col-md-12">
+                                    <h5 class="mb-3">Advice</h5>
+                                    <form id="add_medicine_form">
+                                        <div class="mb-4">
+                                            <input type="text" placeholder="Advice" class="form-control" id="advice" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- investigation -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h5 class="mb-3">Investigation</h5>
+                                    <form id="add_medicine_form">
+                                        <div class="mb-4 ">
+                                            <!-- <input type="text" placeholder="" class="form-control"
+                                        id="" /> -->
+                                            <textarea id="investigation" style="min-height: 50px;"
+                                                placeholder="Type here " class="form-control"></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- additional requirements -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h5 class="mb-3">Additional Instruction</h5>
+                                    <form id="add_medicine_form">
+                                        <div class="mb-4 ">
+                                            <!-- <input type="text" placeholder="" class="form-control"
+                                        id="" /> -->
+                                            <textarea id="investigation" style="min-height: 50px;"
+                                                placeholder="Type here " class="form-control"></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="d-grid">
+                                    <button class="btn btn-primary text-center justify-content-center">Create
+                                        Prescription</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+
+                    <!-- .row // -->
+                </div>
+                <!-- card body .// -->
+            </div>
+            <!-- card .// -->
+        </section>
+        <!-- content-main end// -->
+        <footer class="main-footer font-xs">
+            <div class="row pb-30 pt-15">
+                <div class="col-sm-6">
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script>
+                    &copy; Nest - HTML Ecommerce Template .
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end">All rights reserved</div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="assets/js/create-prescription.js"></script>
+    <script src="assets/js/vendors/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/vendors/select2.min.js"></script>
+    <script src="assets/js/vendors/perfect-scrollbar.js"></script>
+    <script src="assets/js/vendors/jquery.fullscreen.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.5/perfect-scrollbar.common.js"></script>
+
+    
+    <!-- Main Script -->
+    <script src="assets/js/main.js?v=6.0" type="text/javascript"></script>
+</body>
+
+</html>
